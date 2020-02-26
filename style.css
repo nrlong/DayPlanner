@@ -57,15 +57,15 @@ textarea{
   color: white;
 }
 
+
 .saveBtn {
   
   background-color: #06AED5;
   color: white;
-  display: block;
   margin-left: auto;
   height: 4rem;
   width: 4rem;
-  margin-top: auto;
+  vertical-align: center;
   
 }
 
@@ -75,8 +75,22 @@ textarea{
 }
 
 .dataEnter{
-  width: 100%;
   border-style: outset;
   border-color: pink;
   border-radius: 5px;
+  display: block;
 }
+
+.hourDiv{
+  width: 30px;
+  display: inline-block;
+
+}
+
+input {
+  width: 90%;
+  height: 2rem;
+  border: none;
+  margin-left: 16px;
+}
+
