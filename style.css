@@ -58,13 +58,14 @@ textarea{
 }
 
 .saveBtn {
-  border-left: 1px solid black;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
+  
   background-color: #06AED5;
   color: white;
   display: block;
   margin-left: auto;
+  height: 4rem;
+  width: 4rem;
+  margin-top: auto;
   
 }
 
@@ -75,4 +76,7 @@ textarea{
 
 .dataEnter{
   width: 100%;
+  border-style: outset;
+  border-color: pink;
+  border-radius: 5px;
 }

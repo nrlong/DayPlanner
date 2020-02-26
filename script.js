@@ -18,7 +18,8 @@ for (let i=1; i < 25; i++){
     newDiv.setAttribute("class", "dataEnter");
     newDiv.textContent = "test" + i;
     newButton.setAttribute("class", "btn saveBtn " + i);
-    newButton.textContent = "Save" + i;    
+    newButton.innerHTML ='<i class="far fa-save fa-3x"></i>';
+    // newButton.textContent = "Save";
     container.append(newDiv);
     newDiv.append(newButton);
 }
