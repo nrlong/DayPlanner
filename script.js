@@ -28,15 +28,14 @@ for (let i=9; i < 19; i++){
     newButton.innerHTML ='<i class="far fa-save fa-2x"></i>';
     container.append(newDivWrapper);
     newDivWrapper.append(hourDiv, newInput, newButton);
-}
 
-let timeSet = document.querySelectorAll(".hourDiv");
-for (let x = 9; x < 19; x++){
+    let timeSpan = $("<span>");
+    $(".hourDiv").append(timeSpan);
+
+    if (i > 12){
+        timeSpan.text(i - 12 + ":00");
+         } else { 
+             timeSpan.text(i + ":00");
+     }
     
-    if (x > 12){
-        timeSet.forEach(element => {
-            element.textContent =  x - 12 + ":00"})
-        } else {timeSet.forEach(element => {
-            element.textContent =  x;})
-    }
 }
