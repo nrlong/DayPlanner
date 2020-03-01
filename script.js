@@ -1,19 +1,15 @@
 $(document).ready(function(){
     
-    const test = false;
-    const now = moment().format("MMMM Do YYYY");
+    // const now = moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
+    let momentTime = $("#currentDay");
 
 
     let nowHour24 = moment().format("H");
     let nowHour12 = moment().format("h");
 
-    if(test){
-        nowHour24 = 12;
-        nowHour12 = 1;
-    }
-
-    let dateHeading = $("#currentDay");
-    dateHeading.text(now);
+    function update(){
+        momentTime.text(moment().format("dddd, MMMM Do YYYY, h:mm:ss a"));
+    }setInterval(update, 1000);
 
     let storedPlans = JSON.parse(localStorage.getItem("storedPlans"));
 
@@ -28,7 +24,6 @@ $(document).ready(function(){
     let plannerDiv = $("#plans");
     plannerDiv.empty();
 
-    if (test){console.log("current time", nowHour12);}
 
 
 //build daily schedule
@@ -107,7 +102,6 @@ $(document).ready(function(){
 
         let inputId = $("#input-"+index);
         let value = inputId.val();
-        console.log(value);
         plansArr[index] = value;
 
         localStorage.setItem("storedPlans", JSON.stringify(plansArr));
