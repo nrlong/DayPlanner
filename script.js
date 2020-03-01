@@ -5,7 +5,6 @@ $(document).ready(function(){
 
 
     let nowHour24 = moment().format("H");
-    let nowHour12 = moment().format("h");
 
     function update(){
         momentTime.text(moment().format("dddd, MMMM Do YYYY, h:mm:ss a"));
@@ -35,10 +34,10 @@ $(document).ready(function(){
         rowDiv.attr('hour-index', hour);
 
         let timeColDiv = $("<div>");
-        timeColDiv.add("class", "col-md-2");
+        // timeColDiv.add("class", "hourDiv");
 
         const timeSpan = $("<span>");
-        timeSpan.attr("class", "timeBox");
+        timeSpan.attr("class", "hourDiv");
 
         let displayHour = 0;
         let ampm = "";
@@ -59,23 +58,21 @@ $(document).ready(function(){
         dailyInput.attr("id", "input-"+index);
         dailyInput.attr("hour-index", index)
         dailyInput.attr("type", "text");
-        dailyInput.attr("class","dailyPlan");
 
         dailyInput.val(plansArr[index]);
 
         let balanceDiv = $("<div>");
-        balanceDiv.attr("class", "col-md-9");
 
         rowDiv.append(balanceDiv);
         balanceDiv.append(dailyInput);
 
         let saveDiv = $("<div>");
-        saveDiv.add("class", "col-md-1");
+        saveDiv.attr("id", "save");
 
         let saveBtn = $("<i>");
         saveBtn.attr("id", "saveid"+index);
         saveBtn.attr("save-id", index);
-        saveBtn.attr("class", "fa fa-save saveIcon");
+        saveBtn.attr("class", "fas fa-save fa-lg");
 
         rowDiv.append(saveDiv);
         saveDiv.append(saveBtn);
@@ -94,6 +91,7 @@ $(document).ready(function(){
             hourRow.attr("class", "present");
         }
     }
+
 
     $(document).on("click", "i", function(event){
         event.preventDefault();
