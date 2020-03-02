@@ -3,7 +3,6 @@ $(document).ready(function(){
     //generate time for jumbotron
     let momentTime = $("#currentDay");
 
-
     let nowHour24 = moment().format("H");
 
     function update(){
@@ -13,18 +12,14 @@ $(document).ready(function(){
     // retrieve stored plans on load(if any)
     let storedPlans = JSON.parse(localStorage.getItem("storedPlans"));
 
-
     if (storedPlans !== null){
         plansArr = storedPlans;
     }else{
         plansArr = new Array(9);
     }
 
-
     let plannerDiv = $("#plans");
     plannerDiv.empty();
-
-
 
 //build daily schedule
     for (let hour = 9; hour <= 17; hour++){
