@@ -4,7 +4,7 @@ body {
   line-height: 1;
 }
 
-textarea{
+input{
   background: transparent;
   border: none;
   resize: none;
@@ -30,16 +30,8 @@ textarea{
   border-radius: 15px;
 }
 
-.row {
-  white-space: pre-wrap;
-  height: 80px;
-  border-top: 1px solid white;;
-}
-
-.hour {
-  background-color: #ffffff;
+span {
   color: #000000;
-  border-top: 1px dashed #000000;
 }
 
 .past {
@@ -58,27 +50,15 @@ textarea{
 }
 
 
-.saveBtn {
-  
-  background-color: #06AED5;
-  color: white;
+.fa-save{
   margin-left: auto;
-  height: 4rem;
-  width: 4rem;
   vertical-align: center;
+  color: #000000;
   
 }
 
-.saveBtn i:hover {
-  font-size: 20px;
+.fa-save:hover {
   transition: all .3s ease-in-out;
-}
-
-.dataEnter{
-  border-style: outset;
-  border-color: pink;
-  border-radius: 5px;
-  display: block;
 }
 
 .hourDiv{
@@ -92,9 +72,5 @@ input {
   height: 2rem;
   border: none;
   margin-left: 16px;
-}
-
-.fa-save{
-  color: #000000;
 }
 

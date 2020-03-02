@@ -1,5 +1,6 @@
 $(document).ready(function(){
     
+    //generate time for jumbotron
     let momentTime = $("#currentDay");
 
 
@@ -9,6 +10,7 @@ $(document).ready(function(){
         momentTime.text(moment().format("dddd, MMMM Do YYYY, h:mm:ss a"));
     }setInterval(update, 1000);
 
+    // retrieve stored plans on load(if any)
     let storedPlans = JSON.parse(localStorage.getItem("storedPlans"));
 
 
@@ -32,9 +34,6 @@ $(document).ready(function(){
         rowDiv.attr('class', 'row plannerRow');
         rowDiv.attr('hour-index', hour);
 
-        let timeColDiv = $("<div>");
-        // timeColDiv.add("class", "hourDiv");
-
         const timeSpan = $("<span>");
         timeSpan.attr("class", "hourDiv");
 
@@ -50,8 +49,7 @@ $(document).ready(function(){
 
         timeSpan.text(displayHour + ampm);
 
-        rowDiv.append(timeColDiv);
-        timeColDiv.append(timeSpan);
+        rowDiv.append(timeSpan);
 
         let dailyInput = $("<input>");
         dailyInput.attr("id", "input-"+index);
@@ -60,27 +58,20 @@ $(document).ready(function(){
 
         dailyInput.val(plansArr[index]);
 
-        let balanceDiv = $("<div>");
-
-        rowDiv.append(balanceDiv);
-        balanceDiv.append(dailyInput);
-
-        let saveDiv = $("<div>");
-        saveDiv.attr("id", "save");
+        rowDiv.append(dailyInput);
 
         let saveBtn = $("<i>");
         saveBtn.attr("id", "saveid"+index);
         saveBtn.attr("save-id", index);
         saveBtn.attr("class", "fas fa-save fa-lg");
 
-        rowDiv.append(saveDiv);
-        saveDiv.append(saveBtn);
+        rowDiv.append(saveBtn);
 
         rowColorChange(rowDiv, hour);
 
         plannerDiv.append(rowDiv);
     };
-
+//change color of rows based on time of day
     function rowColorChange(hourRow, hour){
         if (hour < nowHour24){
             hourRow.attr("class", "past");
@@ -90,8 +81,7 @@ $(document).ready(function(){
             hourRow.attr("class", "present");
         }
     }
-
-
+// save function
     $(document).on("click", "i", function(event){
         event.preventDefault();
 
