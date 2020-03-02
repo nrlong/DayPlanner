@@ -28,7 +28,7 @@ WHEN I refresh the page
 THEN the saved events persist
 ```
 
-###ToDo
+### ToDo
 
 ```
 Active date and time at the time - completed 

@@ -1,6 +1,5 @@
 $(document).ready(function(){
     
-    // const now = moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
     let momentTime = $("#currentDay");
 
 
